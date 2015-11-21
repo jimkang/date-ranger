@@ -5,13 +5,14 @@ function DateRanger(createOpts) {
   var rangeSize;
   var futureLimit;
 
+  if (createOpts && createOpts.initialDate) {
+    currentStart = moment(createOpts.initialDate).startOf('day');
+  }
+  else {
+    currentStart = moment().startOf('day');
+  }
+
   if (createOpts) {
-    if (createOpts.initialDate) {
-      currentStart = moment(createOpts.initialDate).startOf('day');
-    }
-    else {
-      currentStart = moment().startOf('day');
-    }
     rangeSize = createOpts.rangeSize;
     if (!rangeSize) {
       rangeSize = 1;
