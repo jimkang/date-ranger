@@ -17,28 +17,31 @@ Usage
     });
 
     console.log(dateRanger.getCurrentRangeStrings());
-    // ['2015-11-20T05:00:00.000Z', '2015-11-21T04:59:59.999Z']
+
+`['2015-11-20T05:00:00.000Z', '2015-11-21T04:59:59.999Z']`
 
     // Shift the range forward one day.
     console.log(dateRanger.shift());
-    // ['2015-11-21T05:00:00.000Z', '2015-11-22T04:59:59.999Z']
+
+`['2015-11-21T05:00:00.000Z', '2015-11-22T04:59:59.999Z']`
 
     // Shift the range backward one day.
     console.log(dateRanger.shift({
       amount: -1
     }));
-    // ['2015-11-20T05:00:00.000Z', '2015-11-21T04:59:59.999Z']
+
+`['2015-11-20T05:00:00.000Z', '2015-11-21T04:59:59.999Z']`
 
 API
 ---
 
-- Constructor:
+- **Constructor**:
   - **initialDate**: The date ranger will use the start of this date as the start of the range, initially.
   - **futureLimit**: If specified, the end of the date range will never move past the start of this day.
 - **getCurrentRangeStrings**: Returns a two-element array containing the start and end of the range as ISO strings.
 - **shift**:
-  - days: The number of days to shift the range by. Can be negative.
-  - rangeSize: The new range size (in days).
+  - **days**: The number of days to shift the range by. Can be negative.
+  - **rangeSize**: The new range size (in days).
   Returns the current range strings.
 
 Tests
