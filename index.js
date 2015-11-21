@@ -50,7 +50,7 @@ function DateRanger(createOpts) {
 
     currentStart.add(days, 'days');
     var end = getEnd(currentStart);
-    if (end.isAfter(futureLimit)) {
+    if (futureLimit && end.isAfter(futureLimit)) {
       currentStart = futureLimit.clone().subtract(rangeSize, 'days');
     }
 
