@@ -14,12 +14,13 @@ function DateRanger(createOpts) {
 
   if (createOpts) {
     rangeSize = createOpts.rangeSize;
-    if (!rangeSize) {
-      rangeSize = 1;
-    }
     if (createOpts.futureLimit) {
       futureLimit = moment(createOpts.futureLimit).startOf('day');
     }
+  }
+
+  if (!rangeSize) {
+    rangeSize = 1;
   }
 
   function getEnd(start) {
