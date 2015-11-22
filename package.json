@@ -1,6 +1,6 @@
 {
   "name": "date-ranger",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Maintains a range of dates across shifts and range size changes.",
   "main": "index.js",
   "scripts": {
