@@ -38,6 +38,9 @@ function DateRanger(createOpts) {
     var days;
 
     if (opts) {
+      if (typeof opts !== 'object') {
+        throw new TypeError('shift opts param is not an object.');
+      }
       days = opts.days;
       if (opts.rangeSize) {
         rangeSize = opts.rangeSize;
@@ -57,9 +60,14 @@ function DateRanger(createOpts) {
     return getCurrentRangeStrings();
   }
 
+  function getCurrentStartMoment() {
+    return currentStart.clone();
+  }
+
   return {
     getCurrentRangeStrings: getCurrentRangeStrings,
-    shift: shift
+    shift: shift,
+    getCurrentStartMoment: getCurrentStartMoment
   };
 }
 
